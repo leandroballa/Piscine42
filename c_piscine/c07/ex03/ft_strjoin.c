@@ -6,7 +6,7 @@
 /*   By: lballa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 11:42:21 by lballa            #+#    #+#             */
-/*   Updated: 2022/12/12 16:52:11 by lballa           ###   ########.fr       */
+/*   Updated: 2022/12/12 17:22:53 by lballa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,52 +19,36 @@ char	*ft_strejoin(int size, char **strs, char *sep)
 	int		y;
 	int		r;
 
-	ret = (char *) malloc(size);
-	if (size == 0)
-	{
-		ret = NULL;
-		return (ret);
-	}
+	ret = (char *) malloc(sizeof (strs));
 	x = 0;
-	y = 0;
 	r = 0;
-	while (strs[x][y] != '\0')
+	while (x < size)
 	{
 		y = 0;
 		while (strs[x][y] != '\0')
-		{
-			ret[r++] = strs[0][y];
-			y++;
-			ret[r++] = sep[0];
-		}
-		ret[r - 1] = '\0';
+			ret[r++] = strs[x][y++];
+		y = 0;
+		while (sep[y] != '\0')
+			ret[r++] = sep[y++];
 		x++;
 	}
+	ret[r] = '\0';
 	return (ret);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
-	char	se = ';';
+	//char	se = "balla";
 	char	*st[4];
 	char	*ret;
-	int		i;
-	int		s;
 
-	st[0] = "a";
-	st[1] = "b";
-	st[2] = "c";
-	st[3] = "d";
-	s = sizeof (st);
-	printf("s%d\n", s);
-	ret = ft_strejoin( s, st, &se);
-	i = 0;
-	while (ret[i] != '\0')
-	{
-		printf("%c", ret[i]);
-		i++;
-	}
+	st[0] = " ";
+	st[1] = " ";
+	st[2] = " ";
+	st[3] = " ";
+	ret = ft_strejoin( 4, st, "balla");
+	printf("%s\n", ret);
 	return (0);
 }
-
+*/
