@@ -6,7 +6,7 @@
 /*   By: lballa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:35:23 by lballa            #+#    #+#             */
-/*   Updated: 2022/11/28 19:29:37 by lballa           ###   ########.fr       */
+/*   Updated: 2022/12/15 11:25:19 by lballa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
+/*
 int	main(void)
 {
 	int	x;
@@ -30,3 +30,4 @@ int	main(void)
 	write(1, &x, 1);
 	return (0);
 }
+*/
